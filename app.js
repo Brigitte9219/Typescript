@@ -1,33 +1,42 @@
 "use strict";
 //Función anónima autoinvocada
 (function () {
-    //Funciones de flecha
-    var miFuncion = function (a) {
-        return a;
+    //Desestructuración de objetos
+    var avenger = {
+        nombre: 'Steve',
+        clave: 'Capitan América',
+        poder: 'Droga'
     };
-    //--------------------//
-    var miFuncionN = function (a) {
-        return a.toUpperCase();
+    console.log(avenger.nombre);
+    console.log(avenger.clave);
+    console.log(avenger.poder);
+    //------------------//
+    var nombre = avenger.nombre, clave = avenger.clave, poder = avenger.poder;
+    console.log(nombre);
+    console.log(clave);
+    console.log(poder);
+    //------------------//
+    var extraer = function (_a) {
+        var nombre = _a.nombre, poder = _a.poder;
+        console.log(nombre);
+        console.log(poder);
     };
-    var miFuncionF = function (a) { return a.toUpperCase(); };
-    console.log(miFuncionN('Normal'));
-    console.log(miFuncionF('Flecha'));
-    //--------------------//
-    var sumarN = function (a, b) {
-        return a + b;
+    extraer(avenger);
+    //------------------//
+    //Desestructuración de arreglos
+    var avengers = ['Thor', 'Ironman', 'Spiderman'];
+    console.log(avengers[0]);
+    console.log(avengers[1]);
+    console.log(avengers[2]);
+    var uno = avengers[0], dos = avengers[1], tres = avengers[2];
+    console.log(uno);
+    console.log(dos);
+    console.log(tres);
+    var extraerArray = function (_a) {
+        var thor = _a[0], ironman = _a[1], spiderman = _a[2];
+        console.log(thor);
+        console.log(ironman);
+        console.log(spiderman);
     };
-    var sumarF = function (a, b) { return a + b; };
-    console.log(sumarN(2, 3));
-    console.log(sumarF(3, 3));
-    //--------------------//
-    var hulk = {
-        nombre: 'Hulk',
-        smash: function () {
-            var _this = this;
-            setTimeout(function () {
-                console.log("".concat(_this.nombre, " smash!!!"));
-            }, 1000);
-        }
-    };
-    hulk.smash();
+    extraerArray(avengers);
 })();
