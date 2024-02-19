@@ -1,6 +1,7 @@
 //Función anónima autoinvocada
 (function(){
 
+    //Promesas y su tipado en Typescript
 
     const retirarDinero = (montoRetirar: number): Promise<number> => {
 
