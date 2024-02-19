@@ -1,14 +1,15 @@
+"use strict";
 //Función anónima autoinvocada
 (function () {
-    function getEdad() {
-        return 100 + 100 + 300;
+    //Parámetros obligatorios, opcionales y por defecto
+    function activar(quien, momento, objeto = 'batiseñal') {
+        //console.log(`${quien} activó la ${objeto}`);
+        if (momento) {
+            console.log(`${quien} activo la ${objeto} en la ${momento}.`);
+        }
+        else {
+            console.log(`${quien} activo la ${objeto}.`);
+        }
     }
-    var nombre = 'Brigitte';
-    var apellido = 'Padilla';
-    var edad = 31;
-    //Brigitte Padilla (Edad: 31)
-    //const salida = nombre + apellido + edad;
-    //const salida = nombre + " " + apellido + " ( " + edad + " ) ";
-    var salida = "".concat(nombre, " ").concat(apellido, " (Edad: ").concat(edad, ")\n    ( ").concat(getEdad(), ")");
-    console.log(salida);
-});
+    activar('Gordon', 'tarde');
+})();
