@@ -1,24 +1,30 @@
 //Función anónima autoinvocada
 (function(){
 
-    //Clases y constructores
-    
-class Avenger {
-    //nombre:string='sin nombre';
-    //equipo:string;
-    //nombreReal:string;
-    //puedePelear:boolean;
-    //peleasGanadas:number;
+    //Tipado de retorno de una función
+    const sumar = (a:number, b:number): number => {
+     return a + b;
+    }
 
-    constructor(public nombre:string,
-                public equipo:string,
-                public nombreReal?:string,
-                public puedePelear:boolean = true,
-                public peleasGanadas:number = 0){}
-}
+    console.log(sumar(2,3));
 
-const antman = new Avenger ('Antman','Capi');
+    //-----------------------//
 
-console.log(antman);
+    const nombre = ():string => {
+        return 'Hola fernando';
+    }
+
+    console.log(nombre());
+
+    //-----------------------//
+
+    const obtenerSalario = ():Promise<string> => {
+        return new Promise( (resolve, reject) => {
+        resolve('Fernando');
+        })
+    }
+
+    obtenerSalario()
+    .then(a => console.log(a.toUpperCase()))
 
 })();

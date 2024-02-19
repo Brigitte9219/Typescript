@@ -1,21 +1,22 @@
 "use strict";
 //Función anónima autoinvocada
 (function () {
-    //Clases y constructores
-    class Avenger {
-        //nombre:string='sin nombre';
-        //equipo:string;
-        //nombreReal:string;
-        //puedePelear:boolean;
-        //peleasGanadas:number;
-        constructor(nombre, equipo, nombreReal, puedePelear = true, peleasGanadas = 0) {
-            this.nombre = nombre;
-            this.equipo = equipo;
-            this.nombreReal = nombreReal;
-            this.puedePelear = puedePelear;
-            this.peleasGanadas = peleasGanadas;
-        }
-    }
-    const antman = new Avenger('Antman', 'Capi');
-    console.log(antman);
+    //Tipado de retorno de una función
+    const sumar = (a, b) => {
+        return a + b;
+    };
+    console.log(sumar(2, 3));
+    //-----------------------//
+    const nombre = () => {
+        return 'Hola fernando';
+    };
+    console.log(nombre());
+    //-----------------------//
+    const obtenerSalario = () => {
+        return new Promise((resolve, reject) => {
+            resolve('Fernando');
+        });
+    };
+    obtenerSalario()
+        .then(a => console.log(a.toUpperCase()));
 })();
